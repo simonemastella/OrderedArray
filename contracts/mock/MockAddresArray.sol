@@ -15,8 +15,8 @@ contract MockAddress {
         return AddressOrderedArray.binarySearch(array, address(target)) != -1;
     }
 
-    function findIndex(address target) external view returns (int256) {
-        return AddressOrderedArray.binarySearch(array, target);
+    function findIndex(uint160 target) external view returns (int256) {
+        return AddressOrderedArray.binarySearch(array, address(target));
     }
 
     function getArray() external view returns (address[] memory) {

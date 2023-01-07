@@ -39,4 +39,9 @@ describe('Stake Simulation', () => {
         expect(await mock.exist(1)).to.equal(true);
         expect(await mock.exist(2)).to.equal(false);
     })
+
+    it("get",async () => {
+        expect(await mock.findIndex(0)).to.equal(-1);
+        expect(await mock.findIndex(1)).to.equal(0);
+    })
 });
