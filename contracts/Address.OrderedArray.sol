@@ -52,4 +52,17 @@ library AddressOrderedArray {
         // Target not found
         return -1;
     }
+
+    function removeAndShiftLeft(address[] storage arr, address element) internal {
+    int256 indexToRemove = binarySearch(arr, element);
+    if (indexToRemove == -1) {
+        return;
+    }
+    // Shift the elements to the left to remove the element
+    for (uint256 i = uint256(indexToRemove); i < arr.length - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    // Remove the last element (which is now a duplicate of the second-to-last element)
+    arr.pop();
+}
 }
